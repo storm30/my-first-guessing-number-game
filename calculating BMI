@@ -1,0 +1,38 @@
+"""Prompt the user "Enter your weight (in kgs)" and record weight
+Prompt the user "What is your preferred unit of height? Type "F" for feet and "M" for meters" and record the preference
+If user says "F" then prompt user "You will enter your height given as feet and inches. First enter feet" and record feet and then prompt user "Now enter inches" and record inches
+If user says "M" then prompt user "What is your height in meters" and record height in meters
+If user had chosen "F" then convert height into meters
+Compute BMI using the following formula
+Depending on the value of BMI, report the user's type given by the following table:
+● BMI < 18.5 : UNDERWEIGHT ● 18.5 <= BMI < 25 : NORMAL ● 25 <= BMI < 30 : OVERWEIGHT ● BMI > 30 : VERY-OVERWEIGHT"""
+
+#feet = 0.3048
+#inches = 0.0254
+weights = float(input("Enter your weight(in kgs): "))
+heights_F_M = (input("What is your preferred unit of height? Type 'F' for feet and 'M' for meters: "))
+if heights_F_M == 'F':
+    feet = int(input("First enter feet: "))
+    inches = int(input("Now enter inches: "))
+    heights = feet *0.3048 + inches*0.0254
+    if inches == 12:
+        feet += 1
+        inches = 0
+        heights = feet *0.3048 + inches*0.0254
+         
+elif heights_F_M == 'M':
+    heights = float(input("What is your height in meters: "))
+    
+#heights = feet *0.3048 + inches*0.0254    
+#print(heights)
+BMI = weights/(heights**2) 
+print(BMI)
+if BMI < 18.5:
+    print('BMI < 18.5 : UNDERWEIGHT')
+elif 18.5 <= BMI < 25:
+    print('18.5 <= BMI < 25 : NORMAL')
+elif 25 <= BMI < 30 :
+    print('25 <= BMI < 30 : OVERWEIGHT')
+elif BMI > 30 :
+    print('BMI > 30 : VERY-OVERWEIGHT')
+
