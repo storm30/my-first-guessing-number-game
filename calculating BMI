@@ -7,15 +7,15 @@ Compute BMI using the following formula
 Depending on the value of BMI, report the user's type given by the following table:
 ● BMI < 18.5 : UNDERWEIGHT ● 18.5 <= BMI < 25 : NORMAL ● 25 <= BMI < 30 : OVERWEIGHT ● BMI > 30 : VERY-OVERWEIGHT"""
 
-#feet = 0.3048
-#inches = 0.0254
+#feet = 0.3048  1 feet = 0.3048 meters
+#inches = 0.0254  1 inches = 0.0254 meters
 weights = float(input("Enter your weight(in kgs): "))
 heights_F_M = (input("What is your preferred unit of height? Type 'F' for feet and 'M' for meters: "))
 if heights_F_M == 'F':
     feet = int(input("First enter feet: "))
     inches = int(input("Now enter inches: "))
     heights = feet *0.3048 + inches*0.0254
-    if inches == 12:
+    if inches == 12: # if any user input 5 feet 12 inches then 12 inches will be converted into 1 feet
         feet += 1
         inches = 0
         heights = feet *0.3048 + inches*0.0254
